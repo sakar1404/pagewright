@@ -6,7 +6,7 @@ A desktop PDF editor for Windows, built with Electron, TypeScript and the MuPDF 
 
 **[Download Pagewright for Windows (.exe, 120 MB)](https://github.com/sakar1404/pagewright/releases/download/v1.0.0/Pagewright-Setup-1.0.0.exe)**
 
-Newer versions, if any, are on the [latest release](https://github.com/sakar1404/pagewright/releases/latest) page. It needs 64-bit Windows. The installer is not code-signed, so Windows may show "Windows protected your PC": choose **More info**, then **Run anyway**.
+Newer versions, if any, are on the [latest release](https://github.com/sakar1404/pagewright/releases/latest) page. Pagewright needs 64-bit Windows. The installer is not code-signed, so Windows may show "Windows protected your PC": choose **More info**, then **Run anyway**.
 
 ## Build from source
 
