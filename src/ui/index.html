@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; worker-src 'self' blob:; connect-src 'self'; object-src 'none'; base-uri 'none'">
+  <title>Pagewright</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header id="toolbar" role="toolbar" aria-label="Main toolbar"></header>
+  <main id="layout">
+    <nav id="toolrail" role="toolbar" aria-label="Tools" aria-orientation="vertical"></nav>
+    <aside id="panel" aria-label="Pages">
+      <div id="panel-head"><span>Pages</span><span id="panel-count"></span></div>
+      <div id="panel-actions" role="toolbar" aria-label="Page actions"></div>
+      <div id="thumbs" role="listbox" aria-label="Page thumbnails" aria-multiselectable="true"></div>
+    </aside>
+    <section id="workspace">
+      <div id="propbar" role="toolbar" aria-label="Tool options" hidden></div>
+      <div id="readonly" role="status" hidden>
+        <span class="ro-icon" id="readonly-icon"></span>
+        <span class="ro-text"><strong>This PDF restricts editing, so it opened read-only.</strong> Editing tools are turned off.</span>
+        <button id="unlock" type="button" class="secondary">Enter owner password</button>
+      </div>
+      <div id="viewer-wrap">
+        <section id="viewer" tabindex="-1" aria-label="Document">
+          <div id="pages"></div>
+          <div id="empty">
+            <div id="empty-card">
+              <div id="empty-icon"></div>
+              <h1>Open a PDF to get started</h1>
+              <p>Choose a file, or drop a PDF anywhere in this window.</p>
+              <div id="empty-actions"></div>
+              <p class="empty-note">Works offline. Your files stay on this computer.</p>
+            </div>
+          </div>
+        </section>
+        <div id="searchbar" role="search" hidden>
+          <span class="search-icon" id="search-icon"></span>
+          <input id="search-input" type="search" placeholder="Find in document" aria-label="Find in document">
+          <span id="search-count" aria-live="polite"></span>
+          <button id="search-prev" type="button" class="icon" title="Previous (Shift+Enter)" aria-label="Previous match"></button>
+          <button id="search-next" type="button" class="icon" title="Next (Enter)" aria-label="Next match"></button>
+          <span class="search-sep"></span>
+          <button id="search-close" type="button" class="icon" title="Close (Esc)" aria-label="Close find"></button>
+        </div>
+        <div id="drop-hint" aria-hidden="true"><div><span id="drop-icon"></span><strong>Drop to open</strong><small>One PDF at a time</small></div></div>
+      </div>
+    </section>
+  </main>
+  <footer id="status">
+    <div id="status-info" aria-live="polite"></div>
+    <div id="status-controls"></div>
+  </footer>
+  <div id="toasts" aria-live="assertive"></div>
+  <dialog id="dialog"></dialog>
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>
